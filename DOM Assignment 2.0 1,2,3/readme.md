@@ -11,16 +11,13 @@
 Ans. Code :👇
 
 ```
-const nav_list = document.querySelector("nav ul");
+let nav_val=document.body.querySelector("nav ul");
+let third_el=nav_val.querySelectorAll("a")
+third_el[2].innerText="Projects"
 
-const proj = nav_list.getElementsByTagName("li");
-proj[proj.length-1].innerText = "Projects";
-
-const hireMe = document.createElement("li");
-
-hireMe.innerHTML = "<a>Hire Me</a>";
-
-nav_list.appendChild(hireMe);
+const newLi = document.createElement("li");
+newLi.innerHTML="<a>Hire Me</a>"
+nav_val.appendChild(newLi);
 ```
 
 ___
@@ -32,9 +29,11 @@ ___
 Ans. Code : 👇
 
 ```
-const placeHolder = document.querySelector(".search-field input");
+let nav_val=document.body.querySelector("nav ul");
+let third_el=nav_val.querySelectorAll("a")
+third_el[2].innerText="Projects"
 
-placeHolder.setAttribute("placeholder","Search My Project");
+document.getElementsByTagName("input")[0].placeholder="Search My Project";
 ```
 ---
 
@@ -46,11 +45,9 @@ placeHolder.setAttribute("placeholder","Search My Project");
 Ans. Code : 👇
 
 ```
-const para = document.querySelector(".hero-left-section p");
-
-const span = para.getElementsByTagName("span");
-span[1].innerText = "an Employee";
-span[2].innerText = "iNeuron Intelligence Pvt Ltd"
+let spanList=document.querySelectorAll(".hero-left-section p span")
+spanList[1].innerText="an Employee"
+spanList[2].innerText="iNeuron Intelligence Pvt Ltd."
 ```
 ---
 
@@ -61,8 +58,8 @@ span[2].innerText = "iNeuron Intelligence Pvt Ltd"
 Ans. Code : 👇
 
 ```
-const profilePic = document.querySelector(".hero-right-section img");
-profilePic.setAttribute("src","./image.png");
+let changeImage=document.querySelector(".hero-right-section img")
+changeImage.src="./hitesh.jpg"
 ```
 ---
 
@@ -73,13 +70,10 @@ profilePic.setAttribute("src","./image.png");
 Ans. Code : 👇
 
 ```
-const pro_btn = document.querySelector(".hero-right-section-btns");
-const support = document.createElement("button");
-support.innerText = "Support Me";
-support.style.padding = "5px";
-support.style.width = "100px"
-
-pro_btn.appendChild(support);
+let buttons=document.querySelector(".hero-right-section-btns")
+let newButton=document.createElement("button");
+newButton.innerText="Support Me"
+buttons.appendChild(newButton)
 ```
 ---
 
@@ -92,16 +86,8 @@ pro_btn.appendChild(support);
 
 Ans. Code : 👇
 ```
-//It will select all heading elements👇
-const h3_background = document.querySelectorAll(".accordian h3"); 
-
-
-//It will convert that group of elements into array 👇
-let bg_color = [...h3_background];
-
-
-//It will change the background color of h3 elements.👇
-bg_color.map((ele)=> ele.style.backgroundColor = "#DDDDDD");
+let headingList=document.querySelectorAll(".accordian h3")
+headingList.forEach( e=> e.style.backgroundColor="#DDDDDD" );
 ```
 ---
 
@@ -111,32 +97,12 @@ bg_color.map((ele)=> ele.style.backgroundColor = "#DDDDDD");
 Ans. Code: 👇
 
 ```
-//Selects main div .👇
-const acc_wrapper = document.querySelector(".accordian-wrapper");
-
-//Creates new element named skills and sets class "accordian".👇
-const skills = document.createElement("div");
-skills.setAttribute("class","accordian");
-
-
-<!-- Creates new element h3 and after adding innerText appended it -->👇
-
-const skill_h3 = document.createElement("h3");
-skill_h3.innerText = "Skills";
-skills.appendChild(skill_h3);
-
-
-<!-- Creates new element p and after adding innerText appended it -->👇
-
-const skills_p = document.createElement("p");
-
-skills_p.innerText = "I posses a very good command over the Full Stack Development technologies like MERN which can be seen in my work over the Github.";
-
-skills.append(skills_p);
-
-
-<!-- appended div element to the main div. -->👇
-acc_wrapper.appendChild(skills);
+let list=document.body.querySelector(".accordian-wrapper")
+let element=document.createElement("div")
+element.innerHTML="<h3>Skills</h3> 
+<p>I posses a very good command over the Full Stack Development technologies like MERN which can be seen in my work over the Github. </p>"
+element.className="accordian"
+list.appendChild(element)
 ```
 ---
 
@@ -149,21 +115,13 @@ acc_wrapper.appendChild(skills);
 
 Ans. Code : 👇
 ```
-// left form modifications👇
-document.querySelector(".mainLeftDetails :nth-child(1)").setAttribute("placeholder","FSJS 2.0");
+document.querySelector(".enterName").placeholder="FSJS 2.0"
+document.querySelector(".enterMail").placeholder="fsjs@ineuron.ai"
+document.querySelector(".enterMessage").placeholder="Hello World"
 
-document.querySelector(".mainLeftDetails :nth-child(2)").setAttribute("placeholder","fsjs@ineuron.ai");
-
-document.querySelector(".mainLeftDetails :nth-child(3)").setAttribute("placeholder","Hello World");
-
-
-
-// right form modification 👇
-document.querySelector(".mainRight form :nth-child(1)").setAttribute("placeholder","FSJS 2.0");
-
-document.querySelector(".mainRight form :nth-child(2)").setAttribute("placeholder","fsjs@ineuron.ai");
-
-document.querySelector(".mainRight form :nth-child(3)").setAttribute("placeholder","Hello World");
+document.querySelector(".userName").placeholder="FSJS 2.0"
+document.querySelector(".userEmail").placeholder="fsjs@ineuron.ai"
+document.querySelector(".userMessage").placeholder="Hello World"
 ```
 ---
 
